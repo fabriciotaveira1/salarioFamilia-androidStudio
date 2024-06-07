@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">SalarioFamilia</string>
+    <string name="entrar">Entrar</string>
+    <string name="sair">Sair</string>
+    <string name="logo">logo</string>
+    <string name="adicionar_beneficiario">Adicionar Beneficiário</string>
+    <string name="remover_beneficiario">Remover Beneficiário</string>
+    <string name="atualizar_beneficiario">Atualizar Dados Beneficiário</string>
+    <string name="consultar_beneficiario">Consultar Beneficiário\n</string>
+    <string name="voltar">Voltar\n</string>
+    <string name="nome">Nome</string>
+    <string name="cpf">CPF</string>
+    <string name="data_de_nascimento_dd_mm_aaaa">Data de Nascimento (DD/MM/AAAA)</string>
+    <string name="endere_o">Endereço</string>
+    <string name="telefone">Telefone</string>
+    <string name="e_mail">E-mail</string>
+    <string name="salvar">Salvar</string>
+    <string name="id_do_beneficiario">ID do Beneficiário</string>
+    <string name="deletar">Deletar</string>
+    <string name="confirmar">Confirmar</string>
+</resources>

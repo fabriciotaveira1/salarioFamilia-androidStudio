@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/DelBeneficiaryActivity"
+    android:padding="16dp">
+
+    <!-- Imagem -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/img"
+        android:scaleType="centerCrop" />
+
+    <EditText
+        android:id="@+id/editTextBeneficiaryID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/id_do_beneficiario"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A" />
+
+    <Button
+        android:id="@+id/buttonDeletar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/deletar" />
+
+    <Button
+        android:id="@+id/buttonVoltar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/voltar" />
+
+</LinearLayout>

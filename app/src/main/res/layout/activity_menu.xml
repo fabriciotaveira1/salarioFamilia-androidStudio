@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity">
+
+    <!-- Imagem -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/img"
+        android:scaleType="centerCrop"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <!-- Botões -->
+    <Button
+        android:id="@+id/buttonAdicionar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="0dp"
+        android:text="@string/adicionar_beneficiario" />
+
+    <Button
+        android:id="@+id/buttonRemover"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonAdicionar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="3dp"
+        android:text="@string/remover_beneficiario" />
+
+    <Button
+        android:id="@+id/buttonAtualizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonRemover"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="3dp"
+        android:text="@string/atualizar_beneficiario" />
+
+    <Button
+        android:id="@+id/buttonConsultar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonAtualizar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="3dp"
+        android:text="@string/consultar_beneficiario" />
+
+    <Button
+        android:id="@+id/buttonVoltar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonConsultar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="3dp"
+        android:text="@string/voltar" />
+
+</RelativeLayout>

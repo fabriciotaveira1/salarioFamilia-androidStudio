@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/AttBeneficiaryActivity"
+    android:padding="16dp">
+
+    <!-- Imagem -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/img"
+        android:scaleType="centerCrop" />
+
+    <EditText
+        android:id="@+id/editTextBeneficiaryID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/id_do_beneficiario"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A" />
+
+    <EditText
+        android:id="@+id/editTextNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nome"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/editTextCPF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/cpf"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/editTextDataNascimento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/data_de_nascimento_dd_mm_aaaa"
+        android:importantForAutofill="no"
+        android:inputType="date"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A" />
+
+    <EditText
+        android:id="@+id/editTextEndereco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/endere_o"
+        android:importantForAutofill="no"
+        android:inputType="textPostalAddress"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A" />
+
+    <EditText
+        android:id="@+id/editTextTelefone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/telefone"
+        android:importantForAutofill="no"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/e_mail"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/buttonAtualizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/atualizar_beneficiario" />
+
+
+</LinearLayout>
