@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BeneficiaryDataSource {
-
     private SQLiteDatabase database;
     private BeneficiaryDatabaseHelper dbHelper;
 
@@ -30,13 +29,10 @@ public class BeneficiaryDataSource {
         values.put(BeneficiaryDatabaseHelper.COLUMN_NOME, beneficiary.getNome());
         values.put(BeneficiaryDatabaseHelper.COLUMN_CPF, beneficiary.getCpf());
         values.put(BeneficiaryDatabaseHelper.COLUMN_DATA_NASCIMENTO, beneficiary.getDataNascimento());
-        values.put(BeneficiaryDatabaseHelper.COLUMN_ENDERECO, beneficiary.getEndereco());
-        values.put(BeneficiaryDatabaseHelper.COLUMN_TELEFONE, beneficiary.getTelefone());
-        values.put(BeneficiaryDatabaseHelper.COLUMN_EMAIL, beneficiary.getEmail());
 
-        database.insert(BeneficiaryDatabaseHelper.TABLE_NAME, null, values);
-        return 0;
+        return database.insert(BeneficiaryDatabaseHelper.TABLE_NAME, null, values);
     }
+
     public void deleteBeneficiary(int beneficiaryId) {
         database.delete(BeneficiaryDatabaseHelper.TABLE_NAME,
                 BeneficiaryDatabaseHelper.COLUMN_ID + " = ?",
@@ -59,20 +55,20 @@ public class BeneficiaryDataSource {
         int nomeColumnIndex = cursor.getColumnIndex(BeneficiaryDatabaseHelper.COLUMN_NOME);
         int cpfColumnIndex = cursor.getColumnIndex(BeneficiaryDatabaseHelper.COLUMN_CPF);
         int dataNascimentoColumnIndex = cursor.getColumnIndex(BeneficiaryDatabaseHelper.COLUMN_DATA_NASCIMENTO);
-        int enderecoColumnIndex = cursor.getColumnIndex(BeneficiaryDatabaseHelper.COLUMN_ENDERECO);
-        int telefoneColumnIndex = cursor.getColumnIndex(BeneficiaryDatabaseHelper.COLUMN_TELEFONE);
-        int emailColumnIndex = cursor.getColumnIndex(BeneficiaryDatabaseHelper.COLUMN_EMAIL);
 
         while (cursor.moveToNext()) {
             int id = cursor.getInt(idColumnIndex);
             String nome = cursor.getString(nomeColumnIndex);
             String cpf = cursor.getString(cpfColumnIndex);
             String dataNascimento = cursor.getString(dataNascimentoColumnIndex);
-            String endereco = cursor.getString(enderecoColumnIndex);
-            String telefone = cursor.getString(telefoneColumnIndex);
-            String email = cursor.getString(emailColumnIndex);
 
-            beneficiaries.add(new Beneficiary(id, nome, cpf, dataNascimento, endereco, telefone, email));
+            Beneficiary beneficiary = new Beneficiary();
+            beneficiary.setBeneficiarioID(id);
+            beneficiary.setNome(nome);
+            beneficiary.setCpf(cpf);
+            beneficiary.setDataNascimento(dataNascimento);
+
+            beneficiaries.add(beneficiary);
         }
 
         cursor.close();
@@ -85,9 +81,6 @@ public class BeneficiaryDataSource {
         values.put(BeneficiaryDatabaseHelper.COLUMN_NOME, beneficiary.getNome());
         values.put(BeneficiaryDatabaseHelper.COLUMN_CPF, beneficiary.getCpf());
         values.put(BeneficiaryDatabaseHelper.COLUMN_DATA_NASCIMENTO, beneficiary.getDataNascimento());
-        values.put(BeneficiaryDatabaseHelper.COLUMN_ENDERECO, beneficiary.getEndereco());
-        values.put(BeneficiaryDatabaseHelper.COLUMN_TELEFONE, beneficiary.getTelefone());
-        values.put(BeneficiaryDatabaseHelper.COLUMN_EMAIL, beneficiary.getEmail());
 
         database.update(BeneficiaryDatabaseHelper.TABLE_NAME, values,
                 BeneficiaryDatabaseHelper.COLUMN_ID + " = ?",
@@ -111,23 +104,20 @@ public class BeneficiaryDataSource {
             int nomeColumnIndex = cursor.getColumnIndex(BeneficiaryDatabaseHelper.COLUMN_NOME);
             int cpfColumnIndex = cursor.getColumnIndex(BeneficiaryDatabaseHelper.COLUMN_CPF);
             int dataNascimentoColumnIndex = cursor.getColumnIndex(BeneficiaryDatabaseHelper.COLUMN_DATA_NASCIMENTO);
-            int enderecoColumnIndex = cursor.getColumnIndex(BeneficiaryDatabaseHelper.COLUMN_ENDERECO);
-            int telefoneColumnIndex = cursor.getColumnIndex(BeneficiaryDatabaseHelper.COLUMN_TELEFONE);
-            int emailColumnIndex = cursor.getColumnIndex(BeneficiaryDatabaseHelper.COLUMN_EMAIL);
 
             int id = cursor.getInt(idColumnIndex);
             String nome = cursor.getString(nomeColumnIndex);
             String cpf = cursor.getString(cpfColumnIndex);
             String dataNascimento = cursor.getString(dataNascimentoColumnIndex);
-            String endereco = cursor.getString(enderecoColumnIndex);
-            String telefone = cursor.getString(telefoneColumnIndex);
-            String email = cursor.getString(emailColumnIndex);
 
-            beneficiary = new Beneficiary(id, nome, cpf, dataNascimento, endereco, telefone, email);
+            beneficiary = new Beneficiary();
+            beneficiary.setBeneficiarioID(id);
+            beneficiary.setNome(nome);
+            beneficiary.setCpf(cpf);
+            beneficiary.setDataNascimento(dataNascimento);
         }
 
         cursor.close();
-
         return beneficiary;
     }
 

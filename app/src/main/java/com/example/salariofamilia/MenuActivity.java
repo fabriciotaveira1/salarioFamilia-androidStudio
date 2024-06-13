@@ -38,7 +38,7 @@ public class MenuActivity extends AppCompatActivity {
 
         buttonConsultar.setOnClickListener(v -> {
             // Iniciar SeeBeneficiaryActivity
-            Intent intent = new Intent(MenuActivity.this, SeeBeneficiaryActivity.class);
+            Intent intent = new Intent(MenuActivity.this, BeneficiaryListActivity.class);
             startActivity(intent);
         });
 

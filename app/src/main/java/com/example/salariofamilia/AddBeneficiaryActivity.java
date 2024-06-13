@@ -34,9 +34,6 @@ public class AddBeneficiaryActivity extends AppCompatActivity {
         EditText editTextNome = findViewById(R.id.editTextNome);
         EditText editTextCPF = findViewById(R.id.editTextCPF);
         EditText editTextDataNascimento = findViewById(R.id.editTextDataNascimento);
-        EditText editTextEndereco = findViewById(R.id.editTextEndereco);
-        EditText editTextTelefone = findViewById(R.id.editTextTelefone);
-        EditText editTextEmail = findViewById(R.id.editTextEmail);
         Button buttonSalvar = findViewById(R.id.buttonSalvar);
 
         buttonSalvar.setOnClickListener(v -> {
@@ -44,15 +41,18 @@ public class AddBeneficiaryActivity extends AppCompatActivity {
             String nome = editTextNome.getText().toString();
             String cpf = editTextCPF.getText().toString();
             String dataNascimento = editTextDataNascimento.getText().toString();
-            String endereco = editTextEndereco.getText().toString();
-            String telefone = editTextTelefone.getText().toString();
-            String email = editTextEmail.getText().toString();
 
             // Criar um objeto Beneficiary com os dados do novo beneficiário
-            Beneficiary newBeneficiary = new Beneficiary(0, nome, cpf, dataNascimento, endereco, telefone, email);
+            Beneficiary newBeneficiary = new Beneficiary();
+            newBeneficiary.setNome(nome);
+            newBeneficiary.setCpf(cpf);
+            newBeneficiary.setDataNascimento(dataNascimento);
 
             // Inserir o novo beneficiário no banco de dados
+            dbHelper.open(); // Abrir conexão com o banco de dados
+            // Inserir o novo beneficiário no banco de dados
             long result = dbHelper.insertBeneficiary(newBeneficiary);
+            dbHelper.close(); // Fechar conexão com o banco de dados
 
             if (result != -1) {
                 // Exibir mensagem de confirmação

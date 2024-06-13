@@ -43,35 +43,6 @@
         android:minHeight="48dp"
         android:textColorHint="#546E7A" />
 
-    <EditText
-        android:id="@+id/editTextEndereco"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/endere_o"
-        android:importantForAutofill="no"
-        android:inputType="textPostalAddress"
-        android:minHeight="48dp"
-        android:textColorHint="#546E7A" />
-
-    <EditText
-        android:id="@+id/editTextTelefone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/telefone"
-        android:importantForAutofill="no"
-        android:inputType="phone"
-        android:minHeight="48dp"
-        android:textColorHint="#546E7A" />
-
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/e_mail"
-        android:importantForAutofill="no"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp" />
-
     <Button
         android:id="@+id/buttonSalvar"
         android:layout_width="match_parent"

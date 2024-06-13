@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class DelBeneficiaryActivity extends AppCompatActivity {
 
     private BeneficiaryDataSource dbHelper;
+    private EditText editTextBeneficiaryID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,20 +19,9 @@ public class DelBeneficiaryActivity extends AppCompatActivity {
 
         dbHelper = new BeneficiaryDataSource(this);
 
-        // Inicialize o botão de Voltar
-        Button buttonVoltar = findViewById(R.id.buttonVoltar);
-
-        // Defina o OnClickListener para o botão de Voltar
-        buttonVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Volte para a activity anterior
-                finish();
-            }
-        });
-
-        EditText editTextBeneficiaryID = findViewById(R.id.editTextBeneficiaryID);
+        editTextBeneficiaryID = findViewById(R.id.editTextBeneficiaryID);
         Button buttonDeletar = findViewById(R.id.buttonDeletar);
+        Button buttonVoltar = findViewById(R.id.buttonVoltar);
 
         buttonDeletar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,13 +29,27 @@ public class DelBeneficiaryActivity extends AppCompatActivity {
                 // Obter o ID do beneficiário a ser deletado
                 int beneficiaryId = Integer.parseInt(editTextBeneficiaryID.getText().toString());
 
-                // Deletar o beneficiário do banco de dados
-                dbHelper.deleteBeneficiary(beneficiaryId);
-
-                // Exibir mensagem de confirmação
-                Toast.makeText(DelBeneficiaryActivity.this, "Beneficiário deletado com sucesso!", Toast.LENGTH_SHORT).show();
+                dbHelper.open();
+                // Verificar se o beneficiário com o ID fornecido existe
+                Beneficiary beneficiary = dbHelper.getBeneficiaryById(beneficiaryId);
+                if (beneficiary != null) {
+                    // Beneficiário encontrado, pode ser deletado
+                    dbHelper.deleteBeneficiary(beneficiaryId);
+                    Toast.makeText(DelBeneficiaryActivity.this, "Beneficiário deletado com sucesso!", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Beneficiário não encontrado, exibir mensagem de erro
+                    Toast.makeText(DelBeneficiaryActivity.this, "Beneficiário não encontrado!", Toast.LENGTH_SHORT).show();
+                }
+                dbHelper.close();
 
                 // Fechar a atividade atual
+                finish();
+            }
+        });
+
+        buttonVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 finish();
             }
         });

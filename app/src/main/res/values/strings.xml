@@ -18,4 +18,10 @@
     <string name="id_do_beneficiario">ID do Beneficiário</string>
     <string name="deletar">Deletar</string>
     <string name="confirmar">Confirmar</string>
+    <string name="consultar_beneficiarios">Consultar Beneficiarios</string>
+    <string name="id_do_benefici_rio">ID do Beneficiário</string>
+    <string name="Proximo">Próximo</string>
+    <string name="anterior">anterior</string>
+    <string name="todos_beneficiarios">Todos os Beneficiários</string>
+    <string name="id">ID</string>
 </resources>

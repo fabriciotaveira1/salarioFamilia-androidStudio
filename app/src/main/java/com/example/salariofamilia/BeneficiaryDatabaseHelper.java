@@ -14,19 +14,13 @@ public class BeneficiaryDatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_NOME = "nome";
     public static final String COLUMN_CPF = "cpf";
     public static final String COLUMN_DATA_NASCIMENTO = "dataNascimento";
-    public static final String COLUMN_ENDERECO = "endereco";
-    public static final String COLUMN_TELEFONE = "telefone";
-    public static final String COLUMN_EMAIL = "email";
 
     private static final String TABLE_CREATE =
             "CREATE TABLE " + TABLE_NAME + " (" +
                     COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COLUMN_NOME + " TEXT NOT NULL, " +
                     COLUMN_CPF + " TEXT NOT NULL, " +
-                    COLUMN_DATA_NASCIMENTO + " TEXT NOT NULL, " +
-                    COLUMN_ENDERECO + " TEXT NOT NULL, " +
-                    COLUMN_TELEFONE + " TEXT, " +
-                    COLUMN_EMAIL + " TEXT NOT NULL UNIQUE);";
+                    COLUMN_DATA_NASCIMENTO + " TEXT NOT NULL);";
 
     public BeneficiaryDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

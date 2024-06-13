@@ -13,6 +13,9 @@
         android:theme="@style/Theme.SalarioFamilia"
         tools:targetApi="31">
         <activity
+            android:name=".BeneficiaryListActivity"
+            android:exported="false" />
+        <activity
             android:name=".SeeBeneficiaryActivity"
             android:exported="false" />
         <activity
